@@ -245,3 +245,65 @@ def dupListFunc(dupList):
     return revisedList
 
 print(dupListFunc(dupList))
+
+# Exercise 15
+
+reverseString = input("Give me a series of words: ")
+
+splitString = reverseString.split()
+
+backwardsString = splitString[::-1]
+
+print(backwardsString)
+
+# Exercise 16
+
+def PasswordGenerator():
+
+    counter = 8
+    newPass = ''
+
+    while counter > 0:
+
+        randomChar = random.choice('abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-=_+*')
+
+        newPass += randomChar
+
+        counter -= 1
+
+    return newPass
+
+print(PasswordGenerator())
+
+# Exercise 18
+
+answer = str(random.randint(1000,9999))
+
+print("Welcome to the Cows and Bulls Game!")
+print("Enter a number: ")
+guess = input()
+
+guessCount = 0
+cows = 0
+bulls = 0
+
+while guess != answer:
+
+    for x in range(4):
+        if guess[x] == answer[x]:
+            cows += 1
+        elif guess[x] != answer[x]:
+            bulls += 1
+
+    guessCount += 1
+
+    print(f"{cows} cows, {bulls} bulls")
+
+    cows = 0
+    bulls = 0
+
+    guess = input()
+
+print("You win!")
+
+
